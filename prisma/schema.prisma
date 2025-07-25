@@ -1,0 +1,162 @@
+// Prisma schema for EcoStep app
+
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String           @id @default(uuid())
+  email         String           @unique
+  passwordHash  String
+  displayName   String
+  avatarUrl     String?
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+  role          String           @default("USER")
+  acceptsTermsOfService Boolean        @default(true)
+  isVerified            Boolean        @default(false)
+  verificationCode      String
+  verifiedAt       DateTime?
+  userMissions  UserMission[]
+  createdGroups Group[]          @relation("CreatedGroups")
+  groupMembers  GroupMember[]
+  userRewards   UserReward[]
+  quizAttempts  UserQuizAttempt[]
+  createdMissions Mission[]      @relation("CreatedMissions")
+  createdQuizzes Quiz[]          @relation("CreatedQuizzes")
+  createdChallenges Challenge[]  @relation("CreatedChallenges")
+  verifiedMissions UserMission[] @relation("VerifiedMissions")
+}
+
+model Mission {
+  id          String        @id @default(uuid())
+  title       String
+  description String
+  difficulty  String
+  rewardPoints Int
+  category    String
+  createdBy   User          @relation("CreatedMissions", fields: [createdById], references: [id])
+  createdById String
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  isActive    Boolean       @default(true)
+  userMissions UserMission[]
+}
+
+model UserMission {
+  id          String   @id @default(uuid())
+  user        User     @relation(fields: [userId], references: [id])
+  userId      String
+  mission     Mission  @relation(fields: [missionId], references: [id])
+  missionId   String
+  status      String
+  proofUrl    String?
+  submittedAt DateTime?
+  verifiedAt  DateTime?
+  verifier    User?    @relation("VerifiedMissions", fields: [verifierId], references: [id])
+  verifierId  String?
+}
+
+model Group {
+  id          String        @id @default(uuid())
+  name        String
+  description String
+  createdBy   User          @relation("CreatedGroups", fields: [createdById], references: [id])
+  createdById String
+  createdAt   DateTime      @default(now())
+  groupMembers GroupMember[]
+  challenges  Challenge[]
+}
+
+model GroupMember {
+  id        String   @id @default(uuid())
+  group     Group    @relation(fields: [groupId], references: [id])
+  groupId   String
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  joinedAt  DateTime @default(now())
+  role      String
+}
+
+model Challenge {
+  id          String   @id @default(uuid())
+  group       Group    @relation(fields: [groupId], references: [id])
+  groupId     String
+  title       String
+  description String
+  startDate   DateTime
+  endDate     DateTime
+  createdBy   User     @relation("CreatedChallenges", fields: [createdById], references: [id])
+  createdById String
+}
+
+model Reward {
+  id            String       @id @default(uuid())
+  name          String
+  description   String
+  pointsRequired Int
+  imageUrl      String
+  createdAt     DateTime     @default(now())
+  userRewards   UserReward[]
+}
+
+model UserReward {
+  id         String   @id @default(uuid())
+  user       User     @relation(fields: [userId], references: [id])
+  userId     String
+  reward     Reward   @relation(fields: [rewardId], references: [id])
+  rewardId   String
+  redeemedAt DateTime @default(now())
+}
+
+model Quiz {
+  id          String         @id @default(uuid())
+  title       String
+  description String
+  createdBy   User           @relation("CreatedQuizzes", fields: [createdById], references: [id])
+  createdById String
+  createdAt   DateTime       @default(now())
+  questions   QuizQuestion[]
+  attempts    UserQuizAttempt[]
+}
+
+model QuizQuestion {
+  id           String   @id @default(uuid())
+  quiz         Quiz     @relation(fields: [quizId], references: [id])
+  quizId       String
+  questionText String
+  options      Json
+  correctOption String
+}
+
+model UserQuizAttempt {
+  id         String   @id @default(uuid())
+  user       User     @relation(fields: [userId], references: [id])
+  userId     String
+  quiz       Quiz     @relation(fields: [quizId], references: [id])
+  quizId     String
+  score      Int
+  attemptedAt DateTime @default(now())
+}
+
+model EnvironmentalData {
+  id        String   @id @default(uuid())
+  source    String
+  dataType  String
+  location  String
+  data      Json
+  fetchedAt DateTime @default(now())
+} 
+
+
+enum Role {
+  USER
+  ADMIN
+  SUPER_ADMIN
+}
