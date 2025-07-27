@@ -1,0 +1,216 @@
+7/26/25, 7:42 AM	undefined	Get all users request
+7/26/25, 7:42 AM	undefined	Get all users successful, found 3 users
+7/26/25, 7:43 AM	undefined	Get all users request
+7/26/25, 7:43 AM	undefined	Get all users successful, found 3 users
+7/26/25, 7:44 AM	undefined	Get all users request
+7/26/25, 7:44 AM	undefined	Get all users successful, found 3 users
+7/26/25, 7:44 AM	undefined	Get all missions request
+7/26/25, 7:44 AM	undefined	Get all missions successful, found 0 missions
+7/26/25, 9:26 AM	undefined	User registration attempt: eco.user@example.com
+7/26/25, 9:26 AM	undefined	User registration successful: eco.user@example.com
+7/26/25, 9:27 AM	undefined	User login attempt: eco.user@example.com
+7/26/25, 9:27 AM	undefined	User login failed: eco.user@example.com
+7/26/25, 10:03 AM	undefined	User login attempt: eco.user@example.com
+7/26/25, 10:03 AM	undefined	User login failed: eco.user@example.com
+7/26/25, 10:07 AM	undefined	User login attempt: eco.user@example.com
+7/26/25, 10:07 AM	undefined	User login failed: eco.user@example.com
+7/26/25, 10:15 AM	undefined	User login attempt: eco.user@example.com
+7/26/25, 10:15 AM	undefined	User login successful: eco.user@example.com
+7/26/25, 10:26 AM	undefined	Get user request: df131219-4060-4241-b5e0-038caf050491
+7/26/25, 10:26 AM	undefined	Get user successful: df131219-4060-4241-b5e0-038caf050491
+7/26/25, 10:30 AM	undefined	Forgot password request: eco.user@example.com
+7/26/25, 10:30 AM	undefined	Forgot password email sent: eco.user@example.com
+7/26/25, 10:33 AM	undefined	Password reset attempt for token: eyJhbGciOi...
+7/26/25, 10:33 AM	undefined	Password reset successful
+7/26/25, 10:44 AM	undefined	Get all groups request
+7/26/25, 10:44 AM	undefined	Get all groups successful, found 0 groups
+7/26/25, 10:44 AM	undefined	Get group request: df131219-4060-4241-b5e0-038caf050491
+7/26/25, 10:45 AM	undefined	Get all group members request
+7/26/25, 10:45 AM	undefined	Get all group members successful, found 0 group members
+7/26/25, 10:46 AM	undefined	Get all challenges request
+7/26/25, 10:46 AM	undefined	Get all challenges successful, found 0 challenges
+7/26/25, 10:46 AM	undefined	Get all environmental data request
+7/26/25, 10:46 AM	undefined	Get all environmental data successful, found 0 environmental data entries
+7/26/25, 2:24 PM	undefined	User login attempt: eco.user@example.com
+7/26/25, 2:24 PM	undefined	User login failed: eco.user@example.com
+7/26/25, 2:24 PM	undefined	User login attempt: eco.user@example.com
+7/26/25, 2:24 PM	undefined	User login successful: eco.user@example.com
+7/26/25, 3:23 PM	AuthController	User login attempt: eco.user@example.com
+7/26/25, 3:23 PM	AuthController	User login successful: eco.user@example.com
+7/26/25, 3:24 PM	AuthController	Get current user request: undefined
+7/26/25, 3:24 PM	AuthController	Get current user failed: undefined
+7/26/25, 3:27 PM	undefined	Get all missions request
+7/26/25, 3:27 PM	undefined	Get all missions successful, found 0 missions
+7/26/25, 3:28 PM	undefined	Create environmental data request: source NASA, type temperature, location Paris
+7/26/25, 3:28 PM	undefined	Create environmental data successful: source NASA, type temperature
+7/26/25, 3:32 PM	undefined	Create group member request: user 09afbd1d-8b94-40d3-b0b0-df6df4b724b9, group group001
+7/26/25, 3:35 PM	AuthController	User login attempt: eco.user@example.com
+7/26/25, 3:35 PM	AuthController	User login failed: eco.user@example.com
+7/26/25, 3:36 PM	AuthController	User login attempt: eco.user@example.com
+7/26/25, 3:36 PM	AuthController	User login successful: eco.user@example.com
+7/26/25, 3:36 PM	AuthController	Get current user request: undefined
+7/26/25, 3:36 PM	AuthController	Get current user failed: undefined
+7/26/25, 3:47 PM	AuthController	User login attempt: eco.user@example.com
+7/26/25, 3:47 PM	AuthController	User login successful: eco.user@example.com
+7/26/25, 3:49 PM	undefined	Get all groups request
+7/26/25, 3:49 PM	undefined	Get all groups successful, found 0 groups
+7/26/25, 3:55 PM	AuthController	Get current user request: df131219-4060-4241-b5e0-038caf050491
+7/26/25, 3:55 PM	AuthController	Get current user successful: df131219-4060-4241-b5e0-038caf050491
+7/26/25, 4:01 PM	AuthController	User login attempt: eco.user@example.com
+7/26/25, 4:01 PM	AuthController	User login successful: eco.user@example.com
+7/26/25, 4:01 PM	AuthController	Get current user request: df131219-4060-4241-b5e0-038caf050491
+7/26/25, 4:01 PM	AuthController	Get current user successful: df131219-4060-4241-b5e0-038caf050491
+7/26/25, 4:03 PM	AuthController	Change profile photo request: eco.user@example.com
+7/26/25, 4:03 PM	AuthController	Change profile photo successful: eco.user@example.com
+7/26/25, 4:03 PM	AuthController	Get current user request: df131219-4060-4241-b5e0-038caf050491
+7/26/25, 4:03 PM	AuthController	Get current user successful: df131219-4060-4241-b5e0-038caf050491
+7/26/25, 4:05 PM	AuthController	Remove profile photo request: eco.user@example.com
+7/26/25, 4:05 PM	AuthController	Remove profile photo successful: eco.user@example.com
+7/26/25, 4:05 PM	AuthController	Get current user request: df131219-4060-4241-b5e0-038caf050491
+7/26/25, 4:05 PM	AuthController	Get current user successful: df131219-4060-4241-b5e0-038caf050491
+7/26/25, 4:05 PM	AuthController	Change profile photo request: eco.user@example.com
+7/26/25, 4:05 PM	AuthController	Change profile photo successful: eco.user@example.com
+7/26/25, 4:08 PM	AuthController	Get current user request: df131219-4060-4241-b5e0-038caf050491
+7/26/25, 4:08 PM	AuthController	Get current user successful: df131219-4060-4241-b5e0-038caf050491
+7/26/25, 4:12 PM	AuthController	Resend verification code request: eco.user@example.com
+7/26/25, 4:12 PM	AuthController	Resend verification code failed: eco.user@example.com
+7/26/25, 4:27 PM	AuthController	User registration attempt: kali@company.com
+7/26/25, 4:27 PM	AuthController	User registration failed: kali@company.com
+7/26/25, 4:29 PM	AuthController	User registration attempt: admin@company.com
+7/26/25, 4:30 PM	AuthController	User registration successful: admin@company.com
+7/26/25, 4:32 PM	AuthController	Resend verification code request: admin@company.com
+7/26/25, 4:32 PM	AuthController	Resend verification code failed: admin@company.com
+7/26/25, 4:32 PM	AuthController	Get current user request: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/26/25, 4:32 PM	AuthController	Get current user successful: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/26/25, 4:49 PM	AuthController	User login attempt: admin@company.com
+7/26/25, 4:49 PM	AuthController	User login successful: admin@company.com
+7/26/25, 4:49 PM	AuthController	Get current user request: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/26/25, 4:49 PM	AuthController	Get current user successful: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/26/25, 4:50 PM	AuthController	Get users request with pagination: {"page":1,"items":10}
+7/26/25, 4:50 PM	AuthController	Get users successful
+7/26/25, 4:51 PM	AuthController	Get user request: 76dc3e99-ffb0-4f04-b18f-ab4c359b7ba9
+7/26/25, 4:51 PM	AuthController	Get user successful: 76dc3e99-ffb0-4f04-b18f-ab4c359b7ba9
+7/26/25, 4:53 PM	UsersController	Get all users request
+7/26/25, 4:53 PM	UsersController	Get all users successful, found 6 users
+7/26/25, 4:53 PM	UsersController	Get user request: 76dc3e99-ffb0-4f04-b18f-ab4c359b7ba9
+7/26/25, 4:53 PM	UsersController	Get user successful: 76dc3e99-ffb0-4f04-b18f-ab4c359b7ba9
+7/26/25, 4:54 PM	UsersController	Delete user request: 76dc3e99-ffb0-4f04-b18f-ab4c359b7ba9
+7/26/25, 4:54 PM	UsersController	Delete user successful: 76dc3e99-ffb0-4f04-b18f-ab4c359b7ba9
+7/26/25, 5:31 PM	AuthController	User login attempt: eco.user@example.com
+7/26/25, 5:31 PM	AuthController	User login failed: eco.user@example.com
+7/26/25, 5:32 PM	AuthController	User login attempt: admin@example.com
+7/26/25, 5:32 PM	AuthController	User login failed: admin@example.com
+7/26/25, 5:32 PM	AuthController	User login attempt: admin@company.com
+7/26/25, 5:32 PM	AuthController	User login successful: admin@company.com
+7/26/25, 5:33 PM	UserController	Get users request with pagination: {"page":1,"items":10}
+7/26/25, 5:33 PM	UsersController	Get users successful
+7/26/25, 5:34 PM	UserController	Get user request: 879d359a-d815-44bd-b613-2c38ccd84130
+7/26/25, 5:34 PM	UsersController	Get user successful: 879d359a-d815-44bd-b613-2c38ccd84130
+7/26/25, 5:35 PM	UserController	Get user request: me
+7/26/25, 5:35 PM	UsersController	Get user failed: me
+7/26/25, 5:35 PM	UserController	Get user request: me
+7/26/25, 5:35 PM	UsersController	Get user failed: me
+7/26/25, 5:37 PM	UserController	Get user request: me
+7/26/25, 5:37 PM	UsersController	Get user failed: me
+7/26/25, 5:40 PM	AuthController	User login attempt: admin@company.com
+7/26/25, 5:40 PM	AuthController	User login successful: admin@company.com
+7/26/25, 5:40 PM	UserController	Get user request: me
+7/26/25, 5:40 PM	UsersController	Get user failed: me
+7/26/25, 5:51 PM	UserController	Get user request: me
+7/26/25, 5:51 PM	UsersController	Get user failed: me
+7/26/25, 5:53 PM	AuthController	User login attempt: admin@company.com
+7/26/25, 5:53 PM	AuthController	User login successful: admin@company.com
+7/26/25, 5:53 PM	UsersController	Update user request: remove-profile-photo, updates: undefined
+7/26/25, 5:53 PM	UsersController	Update user successful: remove-profile-photo
+7/26/25, 6:02 PM	UsersController	Update user request: remove-profile-photo, updates: undefined
+7/26/25, 6:02 PM	UsersController	Update user successful: remove-profile-photo
+7/27/25, 1:40 AM	AuthController	User login attempt: admin@company.com
+7/27/25, 1:40 AM	AuthController	User login successful: admin@company.com
+7/27/25, 1:41 AM	AuthController	Resend verification code request: admin@company.com
+7/27/25, 1:41 AM	AuthController	Resend verification code failed: admin@company.com
+7/27/25, 1:46 AM	UserController	Get users request with pagination: {"page":1,"items":10}
+7/27/25, 1:46 AM	UsersController	Get users successful
+7/27/25, 1:47 AM	UserController	Get user request: me
+7/27/25, 1:47 AM	UsersController	Get user failed: me
+7/27/25, 1:48 AM	UserController	Get user request: me
+7/27/25, 1:48 AM	UsersController	Get user failed: me
+7/27/25, 1:49 AM	UserController	Get user request: me
+7/27/25, 1:49 AM	UsersController	Get user failed: me
+7/27/25, 1:49 AM	UserController	Get user request: me
+7/27/25, 1:49 AM	UsersController	Get user failed: me
+7/27/25, 1:52 AM	UserController	Get user request: me
+7/27/25, 1:52 AM	UsersController	Get user failed: me
+7/27/25, 1:52 AM	AuthController	User login attempt: admin@company.com
+7/27/25, 1:52 AM	AuthController	User login successful: admin@company.com
+7/27/25, 1:53 AM	UserController	Get users request with pagination: {"page":1,"items":10}
+7/27/25, 1:53 AM	UsersController	Get users successful
+7/27/25, 1:53 AM	UserController	Get user request: me
+7/27/25, 1:53 AM	UsersController	Get user failed: me
+7/27/25, 1:54 AM	UserController	Get user request: me
+7/27/25, 1:54 AM	UsersController	Get user failed: me
+7/27/25, 1:56 AM	UserController	Get user request: me
+7/27/25, 1:56 AM	UsersController	Get user failed: me
+7/27/25, 1:58 AM	UserController	Get user request: me
+7/27/25, 1:58 AM	UsersController	Get user failed: me
+7/27/25, 1:59 AM	UserController	Get user request: me
+7/27/25, 1:59 AM	UsersController	Get user failed: me
+7/27/25, 1:59 AM	UserController	Get user request: me
+7/27/25, 1:59 AM	UsersController	Get user failed: me
+7/27/25, 2:02 AM	UserController	Get user request: me
+7/27/25, 2:02 AM	UsersController	Get user failed: me
+7/27/25, 2:05 AM	UserController	Get user request: me
+7/27/25, 2:05 AM	UsersController	Get user failed: me
+7/27/25, 2:05 AM	UserController	Get users request with pagination: {"page":1,"items":10}
+7/27/25, 2:05 AM	UsersController	Get users successful
+7/27/25, 2:05 AM	UserController	Get user request: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/27/25, 2:05 AM	UsersController	Get user successful: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/27/25, 2:13 AM	UserController	Get user request: me
+7/27/25, 2:13 AM	UsersController	Get user failed: me
+7/27/25, 2:13 AM	UserController	Get user request: me
+7/27/25, 2:13 AM	UsersController	Get user failed: me
+7/27/25, 2:15 AM	UserController	Get user request: me
+7/27/25, 2:15 AM	UsersController	Get user successful: me
+7/27/25, 2:18 AM	UserController	Get user request: me
+7/27/25, 2:18 AM	UsersController	Get user successful: me
+7/27/25, 2:19 AM	UserController	Get user request: me
+7/27/25, 2:19 AM	UsersController	Get user successful: me
+7/27/25, 2:20 AM	UserController	Get user request: me
+7/27/25, 2:20 AM	UsersController	Get user failed: me
+7/27/25, 2:21 AM	UserController	Get user request: me
+7/27/25, 2:21 AM	UsersController	Get user failed: me
+7/27/25, 2:24 AM	UsersController	Get current user request: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/27/25, 2:24 AM	UsersController	Get current user successful: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/27/25, 2:25 AM	UsersController	Get current user request: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/27/25, 2:25 AM	UsersController	Get current user successful: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/27/25, 2:25 AM	UsersController	Get current user request: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/27/25, 2:25 AM	UsersController	Get current user successful: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/27/25, 2:33 AM	UsersController	Update user request: remove-profile-photo, updates: {}
+7/27/25, 2:33 AM	UsersController	Update user successful: remove-profile-photo
+7/27/25, 2:38 AM	UsersController	Update user request: 7cfea77b-74f1-4d35-b771-70459644c0a5, updates: {"avatarUrl":"https://avatar.iran.liara.run/public/50"}
+7/27/25, 2:38 AM	UsersController	Update user successful: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/27/25, 2:49 AM	AuthController	User login attempt: admin@company.com
+7/27/25, 2:49 AM	AuthController	User login successful: admin@company.com
+7/27/25, 2:49 AM	UsersController	Get current user request: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/27/25, 2:49 AM	UsersController	Get current user successful: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/27/25, 2:50 AM	UsersController	Update user request: change-profile-photo, updates: {"profilePhoto":"https://avatar.iran.liara.run/public/10"}
+7/27/25, 2:50 AM	UsersController	Update user successful: change-profile-photo
+7/27/25, 6:06 AM	UsersController	Get current user request: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/27/25, 6:06 AM	UsersController	Get current user successful: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/27/25, 6:06 AM	UsersController	Update user request: "7cfea77b-74f1-4d35-b771-70459644c0a5, updates: {"profilePhoto":"https://avatar.iran.liara.run/public/10"}
+7/27/25, 6:06 AM	UsersController	Update user successful: "7cfea77b-74f1-4d35-b771-70459644c0a5
+7/27/25, 6:06 AM	UsersController	Update user request: 7cfea77b-74f1-4d35-b771-70459644c0a5, updates: {"profilePhoto":"https://avatar.iran.liara.run/public/10"}
+7/27/25, 6:06 AM	UsersController	Update user successful: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/27/25, 6:09 AM	UsersController	Change profile photo request: admin@company.com
+7/27/25, 6:09 AM	UsersController	Change profile photo successful: admin@company.com
+7/27/25, 6:09 AM	UsersController	Change profile photo request: admin@company.com
+7/27/25, 6:09 AM	UsersController	Change profile photo successful: admin@company.com
+7/27/25, 6:09 AM	UsersController	Get current user request: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/27/25, 6:09 AM	UsersController	Get current user successful: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/27/25, 6:09 AM	UsersController	Remove profile photo request: admin@company.com
+7/27/25, 6:09 AM	UsersController	Remove profile photo successful: admin@company.com
+7/27/25, 6:09 AM	UsersController	Get current user request: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/27/25, 6:09 AM	UsersController	Get current user successful: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/27/25, 6:10 AM	UsersController	Change profile photo request: admin@company.com
+7/27/25, 6:10 AM	UsersController	Change profile photo successful: admin@company.com
+7/27/25, 6:41 AM	AuthController	User login attempt: admin@company.com
+7/27/25, 6:41 AM	AuthController	User login successful: admin@company.com

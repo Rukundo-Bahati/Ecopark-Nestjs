@@ -15,13 +15,13 @@ model User {
   email         String           @unique
   passwordHash  String
   displayName   String
-  avatarUrl     String?
+  profilePhoto     String?
   createdAt     DateTime         @default(now())
   updatedAt     DateTime         @updatedAt
   role          String           @default("USER")
   acceptsTermsOfService Boolean        @default(true)
   isVerified            Boolean        @default(false)
-  verificationCode      String
+  verificationCode      String?
   verifiedAt       DateTime?
   userMissions  UserMission[]
   createdGroups Group[]          @relation("CreatedGroups")

@@ -1,27 +1,24 @@
+import { Role } from '@prisma/client';
+import { Exclude } from 'class-transformer';
 
-import { Role } from "@prisma/client";
-
-export class ApiResponse<T = Record<string, any>> {
-  public success: boolean;
-  public message: string;
-  public data: T | null;
-  public error?: any;
-
-  constructor(success: boolean, message: string, data: T | null = null, error?: any) {
-    this.success = success;
-    this.message = message;
-    this.data = data;
-    this.error = error;
-  }
+export class CustomApiResponse<T = Record<string, any>> {
+  constructor(
+    public success: boolean,
+    public message: string,
+    public data: T | null = null,
+    public error?: any,
+  ) {}
 }
-
 
 export class UserResponseDto {
   id: string;
   email: string;
   displayName: string;
-  role: Role;
-  avatarUrl?: string;
+  profilePhoto?: string;
+  role: string;
   createdAt: Date;
   updatedAt: Date;
+
+  @Exclude()
+  passwordHash: string;
 }

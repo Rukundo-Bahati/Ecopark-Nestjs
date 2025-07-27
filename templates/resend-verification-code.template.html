@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inserjeune | Notifications</title>
+    <style type="text/css">
+        :root {
+            --brand: #1e90ff;
+            --white: #ffffff;
+        }
+
+        * {
+            font-family: 'DM Sans', sans-serif !important;
+        }
+
+        p {
+            margin: 18px 0;
+            line-height: 24px;
+            color: #475569;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1e90ff;
+        }
+
+        .button {
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            border: 1px solid #1e90ff;
+            background-color: #1e90ff;
+            height: 40px;
+            color: var(--white);
+            text-decoration: none;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: #1e90ff;
+            opacity: 90%;
+        }
+
+        .logo {
+            max-width: 16em;
+        }
+
+        .heading-text {
+            font-weight: 700;
+            font-size: 28px;
+        }
+
+        .container {
+            gap: 30px;
+            padding: 30pt;
+        }
+
+        @media (max-width: 500px) {
+            .logo {
+                max-width: 14em;
+            }
+
+            .heading-text {
+                font-weight: 700;
+                font-size: 20px;
+            }
+
+            .container {
+                gap: 20px;
+                padding: 20pt;
+            }
+
+            p {
+                line-height: 24px;
+                margin: 8px 0;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body style="font-family: system-ui, sans-serif; background-color: #efeeee30; padding: 100px 0;">
+    <div style="
+      background-color: white;
+        margin: auto;
+        max-width: 800px;
+        font-size: 16px;
+        gap: 24px;
+        overflow: hidden;
+      ">
+        <div style="
+          align-self: stretch;
+          height: 153px;
+          padding-top: 34px;
+          padding-bottom: 34px;
+        ">
+            <div style="padding: 10pt; margin: 0 1vw;">
+                <img class="logo"
+                    src="https://www.rtb.gov.rw/index.php?eID=dumpFile&t=f&f=16020&token=481dcaad87e5ca01cee3ebc8e2fdc388723f4905"
+                    loading="eager" />
+            </div>
+        </div>
+        <div class="container">
+            <div>
+                <div class="heading-text">
+                    Your verification code is {{code}}
+                </div>
+                <div class="content">
+                    <p>Hey, {{name}}!</p>
+
+                    <p>You recently requested us to resend you your verification code, Your verification code is </p>
+                    <p style="font-family: monospace; font-weight: bolder; font-size: 20px; text-align: center; width: 100% ; background-color: #c4c4c420; padding: 10px;"> {{code}}</p>
+
+                    <p>If you have any questions, our support team is here to help. You can reach us at <a
+                            href="mailto:support@inserjeune.rtb.gov.rw">support@inserjeune.rtb.gov.rw</a>.</p>
+                    <br />
+                    <p>Your friends,</p>
+                    <p style="margin-top: 0px;">The Inserjeune team</p>
+                </div>
+            </div>
+        </div>
+        <hr style=" border: 0.5px solid #51697f20;" />
+
+        <div style="
+            color: #475569;
+            opacity: 60%;
+            text-align: center;
+            padding: 20px 30px;
+          ">
+            <div class="footer">
+                <p>© 2024 Inserjeune. All rights reserved.</p>
+                <div style="padding:0 20px ; text-align: center; background-color: #efeeee10;">
+                    <p style="font-size: 14px;">
+                        Developed and Maintained by:
+                    </p>
+                </div>
+                <div style="">
+                    <a href="https://rtb.gov.rw">
+                        <img class="logo"
+                            src="https://www.rtb.gov.rw/index.php?eID=dumpFile&t=f&f=16020&token=481dcaad87e5ca01cee3ebc8e2fdc388723f4905"
+                            loading="eager" style="width: 120px; object-fit: contain;" />
+                    </a>
+                    <a href="https://www.apefe.org/index.php">
+                        <img class="logo"
+                            src="data:image/png;base64,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"
+                            loading="eager" style="width: 120px; object-fit: contain;" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+</body>
+
+</html>

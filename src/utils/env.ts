@@ -5,6 +5,7 @@ dotenv.config();
 const envSchema = z.object({
   PORT: z.string(),
   SMTP_SERVER: z.string(),
+  SMTP_PORT: z.string(),
   SMTP_USERNAME: z.string(),
   SMTP_PASSWORD: z.string(),
   JWT_SECRET: z.string(),
