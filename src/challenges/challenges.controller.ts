@@ -7,6 +7,7 @@ import {
   Put,
   Delete,
   UseGuards,
+  Request,
 } from '@nestjs/common';
 import {
   ApiTags,
@@ -35,11 +36,12 @@ export class ChallengesController {
   @ApiResponse({ status: 201, description: 'Challenge created successfully.' })
   @UseGuards(JwtAuthGuard)
   @Post()
-  async create(@Body() createChallengeDto: CreateChallengeDto) {
-    this.logger.log(`Create challenge request: ${createChallengeDto.title}`);
-    const result = await this.challengesService.create(createChallengeDto);
+  async create(@Body() dto: CreateChallengeDto, @Request() req) {
+    this.logger.log(`Create challenge request: ${dto.title}`);
+    const userId = (req.user as any)?.id;
+    const result = await this.challengesService.create(dto, userId);
     this.logger.log(
-      `Create challenge ${result ? 'successful' : 'failed'}: ${createChallengeDto.title}`,
+      `Create challenge ${result ? 'successful' : 'failed'}: ${dto.title}`,
     );
     return result;
   }
@@ -50,10 +52,10 @@ export class ChallengesController {
   @ApiResponse({ status: 200, description: 'List of challenges.' })
   @Get()
   async findAll() {
-    this.logger.log('Get all challenges request');
+    this.logger.log('Get all challenges request','ChallengesController');
     const result = await this.challengesService.findAll();
     this.logger.log(
-      `Get all challenges successful, found ${result.length} challenges`,
+      `Get all challenges successful, found ${result.length} challenges`,'ChallengesController'
     );
     return result;
   }
@@ -64,9 +66,9 @@ export class ChallengesController {
   @ApiResponse({ status: 200, description: 'Challenge details.' })
   @Get(':id')
   async findOne(@Param('id') id: string) {
-    this.logger.log(`Get challenge request: ${id}`);
+    this.logger.log(`Get challenge request: ${id}` ,'ChallengesController');
     const result = await this.challengesService.findOne(id);
-    this.logger.log(`Get challenge ${result ? 'successful' : 'failed'}: ${id}`);
+    this.logger.log(`Get challenge ${result ? 'successful' : 'failed'}: ${id}`,'ChallengesController');
     return result;
   }
 
@@ -80,11 +82,11 @@ export class ChallengesController {
     @Body() updateChallengeDto: UpdateChallengeDto,
   ) {
     this.logger.log(
-      `Update challenge request: ${id}, updates: ${JSON.stringify(updateChallengeDto)}`,
+      `Update challenge request: ${id}, updates: ${JSON.stringify(updateChallengeDto)}`,'ChallengesController'
     );
     const result = await this.challengesService.update(id, updateChallengeDto);
     this.logger.log(
-      `Update challenge ${result ? 'successful' : 'failed'}: ${id}`,
+      `Update challenge ${result ? 'successful' : 'failed'}: ${id}`,'ChallengesController'
     );
     return result;
   }
@@ -95,10 +97,10 @@ export class ChallengesController {
   @UseGuards(JwtAuthGuard)
   @Delete(':id')
   async remove(@Param('id') id: string) {
-    this.logger.log(`Delete challenge request: ${id}`);
+    this.logger.log(`Delete challenge request: ${id}`,'ChallengesController');
     const result = await this.challengesService.remove(id);
     this.logger.log(
-      `Delete challenge ${result ? 'successful' : 'failed'}: ${id}`,
+      `Delete challenge ${result ? 'successful' : 'failed'}: ${id}`,'ChallengesController'
     );
     return result;
   }

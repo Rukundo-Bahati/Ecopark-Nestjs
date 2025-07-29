@@ -18,6 +18,7 @@ import { UserQuizAttemptsModule } from './user-quiz-attempts/user-quiz-attempts.
 import { EnvironmentalDataModule } from './environmental-data/environmental-data.module';
 import { GroupMembersModule } from './group-members/group-members.module';
 import { MyLoggerModule } from './my-logger/my-logger.module';
+import { TopicsModule } from './topics/topics.module';
 
 @Module({
   imports: [
@@ -40,6 +41,7 @@ import { MyLoggerModule } from './my-logger/my-logger.module';
     UserQuizAttemptsModule,
     EnvironmentalDataModule,
     MyLoggerModule,
+    TopicsModule,
   ],
   providers: [
     {

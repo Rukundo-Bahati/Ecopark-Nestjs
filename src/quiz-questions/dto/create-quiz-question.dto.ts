@@ -2,22 +2,29 @@ import { IsString, IsNotEmpty, IsObject } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateQuizQuestionDto {
-  @ApiProperty({ description: 'Quiz ID' })
+
+  @ApiProperty()
+@IsString()
+@IsNotEmpty()
+quizId: string;
+
+
+  @ApiProperty()
   @IsString()
   @IsNotEmpty()
-  quizId: string;
+  question: string;
 
-  @ApiProperty({ description: 'Question text' })
-  @IsString()
-  @IsNotEmpty()
-  questionText: string;
-
-  @ApiProperty({ description: 'Available answer options (JSON object)' })
+  @ApiProperty({ example: { A: 'Option A', B: 'Option B' } })
   @IsObject()
-  options: Record<string, any>;
+  options: Record<string, string>;
 
-  @ApiProperty({ description: 'Correct answer identifier' })
+  @ApiProperty()
   @IsString()
   @IsNotEmpty()
-  correctOption: string;
+  correct: string;
+
+  @ApiProperty()
+  @IsString()
+  @IsNotEmpty()
+  explanation: string;
 }

@@ -37,7 +37,7 @@ export class RewardsController {
   @UseGuards(JwtAuthGuard)
   @Post()
   async create(@Body() createRewardDto: CreateRewardDto, @Req() req) {
-  console.log('req.user:', req.user); // 
+  //console.log('req.user:', req.user); 
     
     this.logger.log(
       `Create reward request: ${createRewardDto.name}`,

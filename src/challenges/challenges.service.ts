@@ -7,9 +7,33 @@ import { UpdateChallengeDto } from './dto/update-challenge.dto';
 export class ChallengesService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async create(dto: CreateChallengeDto) {
-    return this.prisma.challenge.create({ data: dto });
+  async create(dto: CreateChallengeDto, userId: string) {
+    const group = await this.prisma.group.findUnique({
+      where: { id: dto.groupId },
+    });
+    if (!group) {
+      throw new NotFoundException(`Group with id ${dto.groupId} not found`);
+    }
+    
+    return this.prisma.challenge.create({
+      data: {
+        title: dto.title,
+        description: dto.description,
+        startDate: new Date(dto.startDate),
+        endDate: new Date(dto.endDate),
+        difficulty: dto.difficulty,
+        category: dto.category,
+        reward: dto.reward,
+        createdBy: {
+          connect: { id: userId },
+        },
+        group: {
+          connect: { id: dto.groupId },
+        },
+      },
+    });
   }
+  
 
   async findAll() {
     return this.prisma.challenge.findMany();

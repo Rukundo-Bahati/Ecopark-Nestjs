@@ -1,32 +1,40 @@
-import { IsString, IsNotEmpty, IsDateString } from 'class-validator';
+import { IsString, IsNotEmpty, IsDateString, IsEnum, IsInt } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
+import { Difficulty, Category } from '@prisma/client'; // Or manually define enums
 
 export class CreateChallengeDto {
-  @ApiProperty({ description: 'Group ID' })
+  @ApiProperty()
   @IsString()
   @IsNotEmpty()
   groupId: string;
 
-  @ApiProperty({ description: 'Challenge title' })
+  @ApiProperty()
   @IsString()
   @IsNotEmpty()
   title: string;
 
-  @ApiProperty({ description: 'Challenge description' })
+  @ApiProperty()
   @IsString()
   @IsNotEmpty()
   description: string;
 
-  @ApiProperty({ description: 'Start date (ISO string)' })
+  @ApiProperty()
   @IsDateString()
   startDate: string;
 
-  @ApiProperty({ description: 'End date (ISO string)' })
+  @ApiProperty()
   @IsDateString()
   endDate: string;
 
-  @ApiProperty({ description: 'Creator user ID' })
-  @IsString()
-  @IsNotEmpty()
-  createdById: string;
+  @ApiProperty({ enum: Difficulty })
+  @IsEnum(Difficulty)
+  difficulty: Difficulty;
+
+  @ApiProperty({ enum: Category })
+  @IsEnum(Category)
+  category: Category;
+
+  @ApiProperty()
+  @IsInt()
+  reward: number;
 }

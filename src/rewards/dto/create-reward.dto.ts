@@ -1,4 +1,4 @@
-import { IsString, IsNotEmpty, IsInt } from 'class-validator';
+import { IsString, IsNotEmpty, IsInt, IsBoolean } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateRewardDto {
@@ -12,9 +12,19 @@ export class CreateRewardDto {
   @IsNotEmpty()
   description: string;
 
+  @ApiProperty({ description: 'Reward category' })
+  @IsString()
+  @IsNotEmpty()
+  category: string;
+
   @ApiProperty({ description: 'Points required to redeem' })
   @IsInt()
   pointsRequired: number;
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsBoolean()
+  available: boolean
 
   @ApiProperty({ description: 'URL to reward image' })
   @IsString()

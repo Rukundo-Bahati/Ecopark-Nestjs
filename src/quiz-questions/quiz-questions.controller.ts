@@ -40,13 +40,16 @@ export class QuizQuestionsController {
   @Post()
   async create(@Body() createQuizQuestionDto: CreateQuizQuestionDto) {
     this.logger.log(
-      `Create quiz question request: quiz ${createQuizQuestionDto.quizId}, question: ${createQuizQuestionDto.questionText.substring(0, 50)}...`,
+      `Create quiz question request: quiz [quizId missing in DTO], question:
+       ${createQuizQuestionDto.question.substring(0, 50)}...`,'QuizQuestionsController'
     );
+    
     const result = await this.quizQuestionsService.create(
       createQuizQuestionDto,
     );
     this.logger.log(
-      `Create quiz question ${result ? 'successful' : 'failed'}: quiz ${createQuizQuestionDto.quizId}`,
+      `Create quiz question ${result ? 'successful' : 'failed'}:
+       quiz ${createQuizQuestionDto.quizId}`,'QuizQuestionsController'
     );
     return result;
   }
@@ -57,10 +60,10 @@ export class QuizQuestionsController {
   @ApiResponse({ status: 200, description: 'List of quiz questions.' })
   @Get()
   async findAll() {
-    this.logger.log('Get all quiz questions request');
+    this.logger.log('Get all quiz questions request','QuizQuestionsController');
     const result = await this.quizQuestionsService.findAll();
     this.logger.log(
-      `Get all quiz questions successful, found ${result.length} quiz questions`,
+      `Get all quiz questions successful, found ${result.length} quiz questions`,'QuizQuestionsController'
     );
     return result;
   }
@@ -71,10 +74,10 @@ export class QuizQuestionsController {
   @ApiResponse({ status: 200, description: 'Quiz question details.' })
   @Get(':id')
   async findOne(@Param('id') id: string) {
-    this.logger.log(`Get quiz question request: ${id}`);
+    this.logger.log(`Get quiz question request: ${id}`,'QuizQuestionsController');
     const result = await this.quizQuestionsService.findOne(id);
     this.logger.log(
-      `Get quiz question ${result ? 'successful' : 'failed'}: ${id}`,
+      `Get quiz question ${result ? 'successful' : 'failed'}: ${id}`,'QuizQuestionsController'
     );
     return result;
   }
@@ -92,14 +95,14 @@ export class QuizQuestionsController {
     @Body() updateQuizQuestionDto: UpdateQuizQuestionDto,
   ) {
     this.logger.log(
-      `Update quiz question request: ${id}, updates: ${JSON.stringify(updateQuizQuestionDto)}`,
+      `Update quiz question request: ${id}, updates: ${JSON.stringify(updateQuizQuestionDto)}`,'QuizQuestionsController'
     );
     const result = await this.quizQuestionsService.update(
       id,
       updateQuizQuestionDto,
     );
     this.logger.log(
-      `Update quiz question ${result ? 'successful' : 'failed'}: ${id}`,
+      `Update quiz question ${result ? 'successful' : 'failed'}: ${id}`,'QuizQuestionsController'
     );
     return result;
   }
@@ -113,10 +116,10 @@ export class QuizQuestionsController {
   @UseGuards(JwtAuthGuard)
   @Delete(':id')
   async remove(@Param('id') id: string) {
-    this.logger.log(`Delete quiz question request: ${id}`);
+    this.logger.log(`Delete quiz question request: ${id}`,'QuizQuestionsController');
     const result = await this.quizQuestionsService.remove(id);
     this.logger.log(
-      `Delete quiz question ${result ? 'successful' : 'failed'}: ${id}`,
+      `Delete quiz question ${result ? 'successful' : 'failed'}: ${id}`,'QuizQuestionsController'
     );
     return result;
   }

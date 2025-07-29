@@ -7,6 +7,7 @@ import {
   Put,
   Delete,
   UseGuards,
+  Req,
 } from '@nestjs/common';
 import {
   ApiTags,
@@ -17,8 +18,12 @@ import {
 import { QuizzesService } from './quizzes.service';
 import { CreateQuizDto } from './dto/create-quiz.dto';
 import { UpdateQuizDto } from './dto/update-quiz.dto';
+import { Request } from 'express';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { MyLoggerService } from '../my-logger/my-logger.service';
+import { RolesGuard } from 'src/auth/role.guard';
+import { Roles } from 'src/auth/role.types';
+import { Role } from '@prisma/client';
 
 @ApiTags('quizzes')
 @Controller('quizzes')
@@ -30,23 +35,34 @@ export class QuizzesController {
     this.logger.setContext(QuizzesController.name);
   }
 
-  @ApiBearerAuth('Bearer')
-  @ApiOperation({ summary: 'Create a new quiz' })
-  @ApiResponse({ status: 201, description: 'Quiz created successfully.' })
-  @UseGuards(JwtAuthGuard)
-  @Post()
-  async create(@Body() createQuizDto: CreateQuizDto) {
-    this.logger.log(
-      `Create quiz request: ${createQuizDto.title}`,
-      'QuizzesController',
-    );
-    const result = await this.quizzesService.create(createQuizDto);
-    this.logger.log(
-      `Create quiz ${result ? 'successful' : 'failed'}: ${createQuizDto.title}`,
-      'QuizzesController',
-    );
-    return result;
-  }
+@ApiBearerAuth('Bearer')
+@ApiOperation({ summary: 'Create a new quiz' })
+@ApiResponse({ status: 201, description: 'Quiz created successfully.' })
+@UseGuards(JwtAuthGuard, RolesGuard)
+@Roles(Role.SUPER_ADMIN,Role.ADMIN)
+@Post()
+async create(
+  @Body() createQuizDto: CreateQuizDto,
+  @Req() req: Request
+): Promise<any> {
+  const userId = (req.user as any)?.id; 
+
+  this.logger.log(
+    `Create quiz request: ${createQuizDto.title}`,
+    'QuizzesController',
+  );
+  this.logger.log(`User from request: ${JSON.stringify(req.user)}`, 'QuizzesController');
+
+
+  const result = await this.quizzesService.createQuiz(createQuizDto, userId);
+
+  this.logger.log(
+    `Create quiz ${result ? 'successful' : 'failed'}: ${createQuizDto.title}`,
+    'QuizzesController',
+  );
+
+  return result;
+}
 
   @ApiBearerAuth('Bearer')
   @UseGuards(JwtAuthGuard)

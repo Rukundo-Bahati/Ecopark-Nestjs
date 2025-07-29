@@ -40,13 +40,18 @@ export class UserQuizAttemptsController {
   @Post()
   async create(@Body() createUserQuizAttemptDto: CreateUserQuizAttemptDto) {
     this.logger.log(
-      `Create user quiz attempt request: user ${createUserQuizAttemptDto.userId}, quiz ${createUserQuizAttemptDto.quizId}, score ${createUserQuizAttemptDto.score}`,
+      `Create user quiz attempt request: user
+       ${createUserQuizAttemptDto.userId}, 
+       quiz ${createUserQuizAttemptDto.quizId},
+        score ${createUserQuizAttemptDto.score}`,'UserQuizAttemptsController'
     );
     const result = await this.userQuizAttemptsService.create(
       createUserQuizAttemptDto,
     );
     this.logger.log(
-      `Create user quiz attempt ${result ? 'successful' : 'failed'}: user ${createUserQuizAttemptDto.userId}, quiz ${createUserQuizAttemptDto.quizId}`,
+      `Create user quiz attempt ${result ? 'successful' : 'failed'}: user 
+      ${createUserQuizAttemptDto.userId}, quiz 
+      ${createUserQuizAttemptDto.quizId}`,'UserQuizAttemptsController'
     );
     return result;
   }
@@ -57,10 +62,10 @@ export class UserQuizAttemptsController {
   @ApiResponse({ status: 200, description: 'List of user quiz attempts.' })
   @Get()
   async findAll() {
-    this.logger.log('Get all user quiz attempts request');
+    this.logger.log('Get all user quiz attempts request','UserQuizAttemptsController');
     const result = await this.userQuizAttemptsService.findAll();
     this.logger.log(
-      `Get all user quiz attempts successful, found ${result.length} user quiz attempts`,
+      `Get all user quiz attempts successful, found ${result.length} user quiz attempts`,'UserQuizAttemptsController'
     );
     return result;
   }
@@ -71,10 +76,10 @@ export class UserQuizAttemptsController {
   @ApiResponse({ status: 200, description: 'User quiz attempt details.' })
   @Get(':id')
   async findOne(@Param('id') id: string) {
-    this.logger.log(`Get user quiz attempt request: ${id}`);
+    this.logger.log(`Get user quiz attempt request: ${id}` ,'UserQuizAttemptsController');
     const result = await this.userQuizAttemptsService.findOne(id);
     this.logger.log(
-      `Get user quiz attempt ${result ? 'successful' : 'failed'}: ${id}`,
+      `Get user quiz attempt ${result ? 'successful' : 'failed'}: ${id}`,'UserQuizAttemptsController'
     );
     return result;
   }
@@ -92,14 +97,15 @@ export class UserQuizAttemptsController {
     @Body() updateUserQuizAttemptDto: UpdateUserQuizAttemptDto,
   ) {
     this.logger.log(
-      `Update user quiz attempt request: ${id}, updates: ${JSON.stringify(updateUserQuizAttemptDto)}`,
+      `Update user quiz attempt request: ${id}, updates:
+       ${JSON.stringify(updateUserQuizAttemptDto)}`,'UserQuizAttemptsController'
     );
     const result = await this.userQuizAttemptsService.update(
       id,
       updateUserQuizAttemptDto,
     );
     this.logger.log(
-      `Update user quiz attempt ${result ? 'successful' : 'failed'}: ${id}`,
+      `Update user quiz attempt ${result ? 'successful' : 'failed'}: ${id}`,'UserQuizAttemptsController'
     );
     return result;
   }
@@ -113,10 +119,10 @@ export class UserQuizAttemptsController {
   @UseGuards(JwtAuthGuard)
   @Delete(':id')
   async remove(@Param('id') id: string) {
-    this.logger.log(`Delete user quiz attempt request: ${id}`);
+    this.logger.log(`Delete user quiz attempt request: ${id}`,'UserQuizAttemptsController');
     const result = await this.userQuizAttemptsService.remove(id);
     this.logger.log(
-      `Delete user quiz attempt ${result ? 'successful' : 'failed'}: ${id}`,
+      `Delete user quiz attempt ${result ? 'successful' : 'failed'}: ${id}`,'UserQuizAttemptsController'
     );
     return result;
   }

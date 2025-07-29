@@ -32,6 +32,19 @@ export class CreateMissionDto {
   @IsNotEmpty()
   category: string;
 
+  @ApiProperty()
+  @IsString()
+  duration: string 
+ 
+  @ApiProperty()
+  @IsString()
+  icon: string 
+      
+  @ApiProperty()
+  @IsString()// <-- required
+  color: string  
+
+
   @ApiProperty({ required: false })
   @IsOptional()
   @IsBoolean()

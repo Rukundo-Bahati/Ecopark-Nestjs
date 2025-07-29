@@ -15,4 +15,8 @@ export class CreateUserQuizAttemptDto {
   @ApiProperty({ description: 'Score earned from attempt' })
   @IsInt()
   score: number;
+
+  @ApiProperty({ description: 'Stars earned from attempt' })
+  @IsInt()
+  stars: number;
 }

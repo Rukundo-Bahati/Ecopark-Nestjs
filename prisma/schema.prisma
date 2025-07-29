@@ -11,99 +11,149 @@ datasource db {
 }
 
 model User {
-  id            String           @id @default(uuid())
-  email         String           @unique
-  passwordHash  String
-  displayName   String
-  profilePhoto     String?
-  createdAt     DateTime         @default(now())
-  updatedAt     DateTime         @updatedAt
-  role          String           @default("USER")
-  acceptsTermsOfService Boolean        @default(true)
-  isVerified            Boolean        @default(false)
+  id                    String    @id @default(uuid())
+  email                 String    @unique
+  passwordHash          String
+  displayName           String
+  profilePhoto          String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+  role                  String    @default("USER")
+  acceptsTermsOfService Boolean   @default(true)
+  isVerified            Boolean   @default(false)
   verificationCode      String?
-  verifiedAt       DateTime?
-  userMissions  UserMission[]
-  createdGroups Group[]          @relation("CreatedGroups")
-  groupMembers  GroupMember[]
-  userRewards   UserReward[]
-  quizAttempts  UserQuizAttempt[]
-  createdMissions Mission[]      @relation("CreatedMissions")
-  createdQuizzes Quiz[]          @relation("CreatedQuizzes")
-  createdChallenges Challenge[]  @relation("CreatedChallenges")
-  verifiedMissions UserMission[] @relation("VerifiedMissions")
+  verifiedAt            DateTime?
+
+  userMissions            UserMission[]
+  createdGroups           Group[]                @relation("CreatedGroups")
+  groupMembers            GroupMember[]
+  userRewards             UserReward[]
+  quizAttempts            UserQuizAttempt[]
+  createdMissions         Mission[]              @relation("CreatedMissions")
+  createdQuizzes          Quiz[]                 @relation("CreatedQuizzes")
+  createdChallenges       Challenge[]            @relation("CreatedChallenges")
+  challengeParticipations ChallengeParticipant[]
+  verifiedMissions        UserMission[]          @relation("VerifiedMissions")
+  topicProgress           UserTopicProgress[] // 👈 required to complete the relation
 }
 
 model Mission {
-  id          String        @id @default(uuid())
-  title       String
-  description String
-  difficulty  String
+  id           String        @id @default(uuid())
+  title        String
+  description  String
+  difficulty   String
   rewardPoints Int
-  category    String
-  createdBy   User          @relation("CreatedMissions", fields: [createdById], references: [id])
-  createdById String
-  createdAt   DateTime      @default(now())
-  updatedAt   DateTime      @updatedAt
-  isActive    Boolean       @default(true)
+  duration     String
+  category     String
+  icon         String
+  color        String?       @default("#3b9ff6")
+  createdBy    User          @relation("CreatedMissions", fields: [createdById], references: [id])
+  createdById  String
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  isActive     Boolean?      @default(true)
   userMissions UserMission[]
 }
 
 model UserMission {
-  id          String   @id @default(uuid())
-  user        User     @relation(fields: [userId], references: [id])
+  id          String    @id @default(uuid())
+  user        User      @relation(fields: [userId], references: [id])
   userId      String
-  mission     Mission  @relation(fields: [missionId], references: [id])
+  mission     Mission   @relation(fields: [missionId], references: [id])
   missionId   String
   status      String
   proofUrl    String?
   submittedAt DateTime?
   verifiedAt  DateTime?
-  verifier    User?    @relation("VerifiedMissions", fields: [verifierId], references: [id])
+  verifier    User?     @relation("VerifiedMissions", fields: [verifierId], references: [id])
   verifierId  String?
 }
 
 model Group {
-  id          String        @id @default(uuid())
-  name        String
-  description String
-  createdBy   User          @relation("CreatedGroups", fields: [createdById], references: [id])
-  createdById String
-  createdAt   DateTime      @default(now())
-  groupMembers GroupMember[]
-  challenges  Challenge[]
+  id             String        @id @default(uuid())
+  name           String
+  description    String
+  avatar         String? // e.g., "🌱"
+  activity       String? // e.g., "Very Active"
+  category       String? // for suggested groups
+  recentActivity String? // e.g., "Beach cleanup organized"
+  createdBy      User          @relation("CreatedGroups", fields: [createdById], references: [id])
+  createdById    String
+  groupMembers   GroupMember[]
+  challenges     Challenge[]
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @default(now()) @updatedAt
 }
 
 model GroupMember {
-  id        String   @id @default(uuid())
-  group     Group    @relation(fields: [groupId], references: [id])
-  groupId   String
-  user      User     @relation(fields: [userId], references: [id])
-  userId    String
-  joinedAt  DateTime @default(now())
-  role      String
+  id             String   @id @default(uuid())
+  group          Group    @relation(fields: [groupId], references: [id])
+  groupId        String
+  user           User     @relation(fields: [userId], references: [id])
+  userId         String
+  joinedAt       DateTime @default(now())
+  role           String // "Admin", "Moderator", "Member"
+  unreadMessages Int      @default(0) // <-- NEW
 }
 
 model Challenge {
-  id          String   @id @default(uuid())
-  group       Group    @relation(fields: [groupId], references: [id])
-  groupId     String
+  id          String     @id @default(uuid())
   title       String
   description String
+  reward      Int
+  difficulty  Difficulty
+  category    Category
   startDate   DateTime
   endDate     DateTime
-  createdBy   User     @relation("CreatedChallenges", fields: [createdById], references: [id])
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  // Relations
+  group   Group  @relation(fields: [groupId], references: [id])
+  groupId String
+
+  createdBy   User   @relation("CreatedChallenges", fields: [createdById], references: [id])
   createdById String
+
+  participants ChallengeParticipant[]
+}
+
+model ChallengeParticipant {
+  id          String    @id @default(uuid())
+  user        User      @relation(fields: [userId], references: [id])
+  userId      String
+  challenge   Challenge @relation(fields: [challengeId], references: [id])
+  challengeId String
+
+  joinedAt     DateTime @default(now())
+  progress     Int      @default(0)
+  completed    Boolean  @default(false)
+  earnedPoints Int      @default(0)
+}
+
+enum Difficulty {
+  EASY
+  MEDIUM
+  HARD
+}
+
+enum Category {
+  Transportation
+  WasteReduction
+  Energy
+  Food
 }
 
 model Reward {
-  id            String       @id @default(uuid())
-  name          String
-  description   String
+  id             String       @id @default(uuid())
+  name           String
+  description    String
   pointsRequired Int
-  imageUrl      String
-  createdAt     DateTime     @default(now())
-  userRewards   UserReward[]
+  category       String
+  imageUrl       String
+  createdAt      DateTime     @default(now())
+  available      Boolean?     @default(true)
+  userRewards    UserReward[]
 }
 
 model UserReward {
@@ -116,33 +166,60 @@ model UserReward {
 }
 
 model Quiz {
-  id          String         @id @default(uuid())
+  id          String            @id @default(uuid())
   title       String
   description String
-  createdBy   User           @relation("CreatedQuizzes", fields: [createdById], references: [id])
+  createdBy   User              @relation("CreatedQuizzes", fields: [createdById], references: [id])
   createdById String
-  createdAt   DateTime       @default(now())
+  createdAt   DateTime          @default(now())
   questions   QuizQuestion[]
   attempts    UserQuizAttempt[]
 }
 
 model QuizQuestion {
-  id           String   @id @default(uuid())
-  quiz         Quiz     @relation(fields: [quizId], references: [id])
-  quizId       String
-  questionText String
-  options      Json
-  correctOption String
+  id          String @id @default(uuid())
+  question    String
+  options     Json
+  correct     String
+  explanation String
+  quiz        Quiz   @relation(fields: [quizId], references: [id])
+  quizId      String
 }
 
 model UserQuizAttempt {
-  id         String   @id @default(uuid())
-  user       User     @relation(fields: [userId], references: [id])
-  userId     String
-  quiz       Quiz     @relation(fields: [quizId], references: [id])
-  quizId     String
-  score      Int
+  id          String   @id @default(uuid())
+  user        User     @relation(fields: [userId], references: [id])
+  userId      String
+  quiz        Quiz     @relation(fields: [quizId], references: [id])
+  quizId      String
+  score       Int
+  stars       Int
   attemptedAt DateTime @default(now())
+}
+
+model Topic {
+  id        String   @id @default(uuid())
+  title     String
+  icon      String?  @default("#ef4444")
+  color     String
+  lessons   Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  userProgress UserTopicProgress[] // 👈 Add this line
+}
+
+model UserTopicProgress {
+  id String @id @default(uuid())
+
+  user   User   @relation(fields: [userId], references: [id])
+  userId String
+
+  topic   Topic  @relation(fields: [topicId], references: [id])
+  topicId String
+
+  progress  Int
+  updatedAt DateTime @updatedAt
 }
 
 model EnvironmentalData {
@@ -152,8 +229,7 @@ model EnvironmentalData {
   location  String
   data      Json
   fetchedAt DateTime @default(now())
-} 
-
+}
 
 enum Role {
   USER

@@ -214,3 +214,148 @@
 7/27/25, 6:10 AM	UsersController	Change profile photo successful: admin@company.com
 7/27/25, 6:41 AM	AuthController	User login attempt: admin@company.com
 7/27/25, 6:41 AM	AuthController	User login successful: admin@company.com
+7/29/25, 8:06 AM	AuthController	User registration attempt: kim@gmail.com
+7/29/25, 8:06 AM	AuthController	User registration successful: kim@gmail.com
+7/29/25, 8:08 AM	AuthController	Resend verification code request: kim@gmail.com
+7/29/25, 8:08 AM	AuthController	Resend verification code successful: kim@gmail.com
+7/29/25, 8:08 AM	UsersController	Get current user request: bc12ed9c-a88e-4b38-81f2-58558bd8d885
+7/29/25, 8:08 AM	UsersController	Get current user successful: bc12ed9c-a88e-4b38-81f2-58558bd8d885
+7/29/25, 8:54 AM	undefined	Create group request by user: bc12ed9c-a88e-4b38-81f2-58558bd8d885, group name: Eco Warriors
+7/29/25, 8:54 AM	undefined	Create group successful: Eco Warriors
+7/29/25, 10:01 AM	AuthController	User login attempt: kim@gmail.com
+7/29/25, 10:01 AM	AuthController	User login successful: kim@gmail.com
+7/29/25, 10:01 AM	UsersController	Get current user request: bc12ed9c-a88e-4b38-81f2-58558bd8d885
+7/29/25, 10:01 AM	UsersController	Get current user successful: bc12ed9c-a88e-4b38-81f2-58558bd8d885
+7/29/25, 10:15 AM	undefined	Create mission request: Use Reusable Cup by user bc12ed9c-a88e-4b38-81f2-58558bd8d885
+7/29/25, 10:15 AM	undefined	Create mission successful: Use Reusable Cup
+7/29/25, 10:17 AM	undefined	Get all user missions request for user bc12ed9c-a88e-4b38-81f2-58558bd8d885
+7/29/25, 10:17 AM	undefined	Get all user missions successful, found 0 user missions for user bc12ed9c-a88e-4b38-81f2-58558bd8d885
+7/29/25, 10:20 AM	undefined	Create mission request: Public Transport by user bc12ed9c-a88e-4b38-81f2-58558bd8d885
+7/29/25, 10:20 AM	undefined	Create mission successful: Public Transport
+7/29/25, 10:22 AM	undefined	Create mission request: Public Transport by user bc12ed9c-a88e-4b38-81f2-58558bd8d885
+7/29/25, 10:22 AM	undefined	Create mission successful: Public Transport
+7/29/25, 10:29 AM	RewardsController	Create reward request: Bamboo Water Bottle
+7/29/25, 10:29 AM	RewardsController	Create reward successful: Bamboo Water Bottle
+7/29/25, 10:31 AM	RewardsController	Create reward request: Solar Power Bank
+7/29/25, 10:31 AM	RewardsController	Create reward successful: Solar Power Bank
+7/29/25, 10:38 AM	RewardsController	Create reward request: 20% Off Organic Store
+7/29/25, 10:38 AM	RewardsController	Create reward successful: 20% Off Organic Store
+7/29/25, 10:40 AM	RewardsController	Create reward request: Tree Planting Experience
+7/29/25, 10:40 AM	RewardsController	Create reward successful: Tree Planting Experience
+7/29/25, 10:44 AM	RewardsController	Create reward request: Ocean Cleanup Donation
+7/29/25, 10:44 AM	RewardsController	Create reward successful: Ocean Cleanup Donation
+7/29/25, 10:48 AM	RewardsController	Create reward request: Eco-friendly Tote Bag
+7/29/25, 10:48 AM	RewardsController	Create reward successful: Eco-friendly Tote Bag
+7/29/25, 10:48 AM	RewardsController	Get all rewards request
+7/29/25, 10:48 AM	RewardsController	Get all rewards successful, found 6 rewards
+7/29/25, 10:48 AM	RewardsController	Get reward request: e6fcd7e8-115a-4e36-b5e0-04de5aee0cd1
+7/29/25, 10:48 AM	RewardsController	Get reward successful: e6fcd7e8-115a-4e36-b5e0-04de5aee0cd1
+7/29/25, 10:50 AM	RewardsController	Update reward request: e6fcd7e8-115a-4e36-b5e0-04de5aee0cd1, updates: {"imageUrl":"https://cdn-icons-png.flaticon.com/128/187/187250.png"}
+7/29/25, 10:50 AM	RewardsController	Update reward successful: e6fcd7e8-115a-4e36-b5e0-04de5aee0cd1
+7/29/25, 10:51 AM	RewardsController	Delete reward request: e6fcd7e8-115a-4e36-b5e0-04de5aee0cd1
+7/29/25, 10:51 AM	RewardsController	Delete reward successful: e6fcd7e8-115a-4e36-b5e0-04de5aee0cd1
+7/29/25, 10:52 AM	RewardsController	Create reward request: Bamboo Water Bottle
+7/29/25, 10:52 AM	RewardsController	Create reward successful: Bamboo Water Bottle
+7/29/25, 10:53 AM	undefined	Create user reward request: user bc12ed9c-a88e-4b38-81f2-58558bd8d885, reward 343d5254-03c3-40f6-90bf-2b3f31e970ac
+7/29/25, 10:53 AM	undefined	Create user reward successful: user bc12ed9c-a88e-4b38-81f2-58558bd8d885, reward 343d5254-03c3-40f6-90bf-2b3f31e970ac
+7/29/25, 10:54 AM	undefined	Get all user rewards request
+7/29/25, 10:54 AM	undefined	Get all user rewards successful, found 1 user rewards
+7/29/25, 10:54 AM	undefined	Get user reward request: 93556f97-5b8a-4dad-a606-9ceb5df7d5c5
+7/29/25, 10:54 AM	undefined	Get user reward successful: 93556f97-5b8a-4dad-a606-9ceb5df7d5c5
+7/29/25, 11:07 AM	AuthController	User login attempt: kim@gmail.com
+7/29/25, 11:07 AM	AuthController	User login successful: kim@gmail.com
+7/29/25, 11:09 AM	AuthController	User login attempt: admin@company.com
+7/29/25, 11:09 AM	AuthController	User login failed: admin@company.com
+7/29/25, 11:12 AM	AuthController	User login attempt: admin@company.com
+7/29/25, 11:12 AM	AuthController	User login failed: admin@company.com
+7/29/25, 11:12 AM	AuthController	Forgot password request: admin@company.com
+7/29/25, 11:13 AM	AuthController	Forgot password email sent: admin@company.com
+7/29/25, 11:15 AM	AuthController	Password reset attempt for token: eyJhbGciOi...
+7/29/25, 11:15 AM	AuthController	Password reset successful
+7/29/25, 11:15 AM	AuthController	User login attempt: admin@company.com
+7/29/25, 11:15 AM	AuthController	User login successful: admin@company.com
+7/29/25, 11:15 AM	undefined	Create topic request: climate-basics
+7/29/25, 11:15 AM	undefined	Create topic successful: climate-basics
+7/29/25, 11:16 AM	undefined	Create topic request: daily-life
+7/29/25, 11:16 AM	undefined	Create topic successful: daily-life
+7/29/25, 11:16 AM	undefined	Create topic request: media-literacy
+7/29/25, 11:16 AM	undefined	Create topic successful: media-literacy
+7/29/25, 11:16 AM	undefined	Create topic request: global-policy
+7/29/25, 11:16 AM	undefined	Create topic successful: global-policy
+7/29/25, 11:17 AM	undefined	Get all topics request
+7/29/25, 11:17 AM	undefined	Get all topics successful, found 4
+7/29/25, 11:22 AM	AuthController	User login attempt: admin@company.com
+7/29/25, 11:22 AM	AuthController	User login successful: admin@company.com
+7/29/25, 11:22 AM	undefined	Get all topics request
+7/29/25, 11:22 AM	undefined	Get all topics successful, found 4
+7/29/25, 11:24 AM	undefined	Create topic request: Climate Science Basics
+7/29/25, 11:24 AM	undefined	Create topic successful: Climate Science Basics
+7/29/25, 11:25 AM	undefined	Create topic request: Environmental Issues in Daily Life
+7/29/25, 11:25 AM	undefined	Create topic successful: Environmental Issues in Daily Life
+7/29/25, 11:25 AM	undefined	Create topic request: Environmental Media Literacy
+7/29/25, 11:25 AM	undefined	Create topic successful: Environmental Media Literacy
+7/29/25, 11:25 AM	undefined	Create topic request: Global Environmental Policy
+7/29/25, 11:25 AM	undefined	Create topic successful: Global Environmental Policy
+7/29/25, 11:25 AM	undefined	Get all environmental data request
+7/29/25, 11:25 AM	undefined	Get all environmental data successful, found 1 environmental data entries
+7/29/25, 11:26 AM	undefined	Get all topics request
+7/29/25, 11:26 AM	undefined	Get all topics successful, found 8
+7/29/25, 11:26 AM	undefined	Get topic request: "daily-life"
+7/29/25, 11:26 AM	undefined	Get topic request: daily-life
+7/29/25, 11:26 AM	undefined	Get topic successful: daily-life
+7/29/25, 11:27 AM	undefined	Update topic request: daily-life, updates: {"title":"Climate Science Advanced"}
+7/29/25, 11:27 AM	undefined	Update topic successful: daily-life
+7/29/25, 11:27 AM	undefined	Delete topic request: daily-life
+7/29/25, 11:28 AM	undefined	Delete topic successful: daily-life
+7/29/25, 11:34 AM	TopicsController	Delete topic request: daily-life
+7/29/25, 11:34 AM	TopicsController	Delete topic successful: daily-life
+7/29/25, 11:34 AM	undefined	Get all topics request
+7/29/25, 11:34 AM	undefined	Get all topics successful, found 7
+7/29/25, 11:34 AM	TopicsController	Delete topic request: climate-basics
+7/29/25, 11:34 AM	TopicsController	Delete topic successful: climate-basics
+7/29/25, 12:28 PM	AuthController	User login attempt: admin@company.com
+7/29/25, 12:28 PM	AuthController	User login successful: admin@company.com
+7/29/25, 12:29 PM	AuthController	User login attempt: admin@company.com
+7/29/25, 12:29 PM	AuthController	User login successful: admin@company.com
+7/29/25, 12:36 PM	QuizzesController	Create quiz request: General Knowledge Quiz
+7/29/25, 12:38 PM	QuizzesController	Create quiz request: General Knowledge Quiz
+7/29/25, 12:42 PM	QuizzesController	Create quiz request: General Knowledge Quiz
+7/29/25, 12:42 PM	QuizzesController	User from request: {"id":"7cfea77b-74f1-4d35-b771-70459644c0a5","email":"admin@company.com","role":"ADMIN"}
+7/29/25, 12:42 PM	QuizzesController	Create quiz successful: General Knowledge Quiz
+7/29/25, 12:50 PM	QuizzesController	Create quiz request: Daily Climate Challenge
+7/29/25, 12:50 PM	QuizzesController	User from request: {"id":"7cfea77b-74f1-4d35-b771-70459644c0a5","email":"admin@company.com","role":"ADMIN"}
+7/29/25, 12:50 PM	QuizzesController	Create quiz successful: Daily Climate Challenge
+7/29/25, 2:22 PM	QuizzesController	Create quiz request: Daily Climate Challenge
+7/29/25, 2:22 PM	QuizzesController	User from request: {"id":"7cfea77b-74f1-4d35-b771-70459644c0a5","email":"admin@company.com","role":"ADMIN"}
+7/29/25, 2:22 PM	QuizzesController	Create quiz successful: Daily Climate Challenge
+7/29/25, 2:23 PM	undefined	Create quiz question request: quiz [quizId missing in DTO], question: What is the main cause of global warming?...
+7/29/25, 2:23 PM	undefined	Create quiz question successful: quiz 3fcc8902-5bfe-43c2-a75d-e6b63a8846b2
+7/29/25, 2:23 PM	QuizzesController	Get all quizzes request
+7/29/25, 2:23 PM	QuizzesController	Get all quizzes successful, found 3 quizzes
+7/29/25, 2:24 PM	undefined	Get all quiz questions request
+7/29/25, 2:24 PM	undefined	Get all quiz questions successful, found 5 quiz questions
+7/29/25, 2:25 PM	UsersController	Get current user request: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/29/25, 2:25 PM	UsersController	Get current user successful: 7cfea77b-74f1-4d35-b771-70459644c0a5
+7/29/25, 2:26 PM	undefined	Create user quiz attempt request: user 7cfea77b-74f1-4d35-b771-70459644c0a5, quiz 3fcc8902-5bfe-43c2-a75d-e6b63a8846b2, score 0
+7/29/25, 2:26 PM	undefined	Create user quiz attempt successful: user 7cfea77b-74f1-4d35-b771-70459644c0a5, quiz 3fcc8902-5bfe-43c2-a75d-e6b63a8846b2
+7/29/25, 2:27 PM	undefined	Create user quiz attempt request: user 7cfea77b-74f1-4d35-b771-70459644c0a5, quiz 3fcc8902-5bfe-43c2-a75d-e6b63a8846b2, score 20
+7/29/25, 2:27 PM	undefined	Create user quiz attempt successful: user 7cfea77b-74f1-4d35-b771-70459644c0a5, quiz 3fcc8902-5bfe-43c2-a75d-e6b63a8846b2
+7/29/25, 2:27 PM	undefined	Get all user quiz attempts request
+7/29/25, 2:27 PM	undefined	Get all user quiz attempts successful, found 2 user quiz attempts
+7/29/25, 2:27 PM	RewardsController	Get all rewards request
+7/29/25, 2:27 PM	RewardsController	Get all rewards successful, found 6 rewards
+7/29/25, 2:28 PM	undefined	Get all groups request
+7/29/25, 2:28 PM	undefined	Get all groups successful, found 1 groups
+7/29/25, 2:28 PM	undefined	Create group member request: user 7cfea77b-74f1-4d35-b771-70459644c0a5, group 630d56db-4fed-4154-b09e-b9e3496ab52d
+7/29/25, 2:28 PM	undefined	Create group member successful: user 7cfea77b-74f1-4d35-b771-70459644c0a5, group 630d56db-4fed-4154-b09e-b9e3496ab52d
+7/29/25, 2:32 PM	undefined	Create challenge request: Plastic-Free Week
+7/29/25, 2:51 PM	undefined	Create challenge request: Plastic-Free Week
+7/29/25, 2:53 PM	undefined	Create challenge request: Plastic-Free Week
+7/29/25, 2:54 PM	undefined	Create challenge request: Plastic-Free Week
+7/29/25, 2:54 PM	undefined	Create challenge successful: Plastic-Free Week
+7/29/25, 2:54 PM	undefined	Get all challenges request
+7/29/25, 2:54 PM	undefined	Get all challenges successful, found 1 challenges
+7/29/25, 2:57 PM	ChallengesController	Get all challenges request
+7/29/25, 2:57 PM	ChallengesController	Get all challenges successful, found 1 challenges
+7/29/25, 10:05 PM7/29/25, 10:05 PM7/29/25, 10:05 PM	ChallengesController	Get all challenges request
+7/29/25, 10:05 PM	ChallengesController	Get all challenges successful, found 1 challenges

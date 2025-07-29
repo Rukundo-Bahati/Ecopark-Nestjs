@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "public"."Topic" ADD COLUMN     "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP;

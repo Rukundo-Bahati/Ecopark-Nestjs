@@ -7,8 +7,33 @@ import { UpdateQuizDto } from './dto/update-quiz.dto';
 export class QuizzesService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async create(dto: CreateQuizDto) {
-    return this.prisma.quiz.create({ data: dto });
+  async createQuiz(dto: CreateQuizDto, userId: string) {
+    if (!userId) {
+      throw new Error('Invalid or missing user ID');
+    }
+
+    // Create the quiz with nested questions (without quizId)
+    return this.prisma.quiz.create({
+      data: {
+        title: dto.title,
+        description: dto.description,
+        createdById: userId,
+        questions: dto.questions?.length
+          ? {
+              create: dto.questions.map((q) => ({
+                question: q.question,
+                options: q.options,
+                correct: q.correct,
+                explanation: q.explanation,
+                // quizId not needed here
+              })),
+            }
+          : undefined,
+      },
+      include: {
+        questions: true, // optional: return quiz with questions
+      },
+    });
   }
 
   async findAll() {
@@ -22,7 +47,29 @@ export class QuizzesService {
   }
 
   async update(id: string, dto: UpdateQuizDto) {
-    return this.prisma.quiz.update({ where: { id }, data: dto });
+    const { questions, ...rest } = dto;
+
+    const data: any = {
+      ...rest,
+    };
+
+    if (questions) {
+      // Delete old questions and recreate new ones (simpler approach)
+      data.questions = {
+        deleteMany: {}, // delete all existing questions for this quiz
+        create: questions.map((q) => ({
+          question: q.question,
+          options: q.options,
+          correct: q.correct,
+          explanation: q.explanation,
+        })),
+      };
+    }
+
+    return this.prisma.quiz.update({
+      where: { id },
+      data,
+    });
   }
 
   async remove(id: string) {
